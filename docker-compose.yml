@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  http:
+    build: ./http
+    container_name: ztp-web
+    volumes:
+      - "./http/content:/var/www/html:ro"
+      - "./http/log:/var/log/nginx"
+      - "./http/conf/nginx.conf:/etc/nginx/nginx.conf:ro"
+    ports:
+      - target: 80
+        published: 8080
