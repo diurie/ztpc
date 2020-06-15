@@ -1,2 +1,1 @@
 FROM networkboot/dhcpd:latest
-
