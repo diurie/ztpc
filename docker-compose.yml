@@ -12,8 +12,9 @@ services:
       - target: 80
         published: 8080
   dhcp:
-    build: ./dhcp
+    image: networkboot/dhcpd:latest
     container_name: dhcp
     volumes:
       - "./dhcp/data/dhcpd.conf:/data/dhcpd.conf:ro"
+      - "./dhcp/data/dhcpd.leases:/data/dhcpd.leases"
     network_mode: host
