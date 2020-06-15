@@ -12,7 +12,7 @@ services:
       - target: 80
         published: 8080
   dhcp:
-    image: networkboot/dhcpd:latest
+    build: ./dhcp
     container_name: dhcp
     volumes:
       - "./dhcp/data/dhcpd.conf:/data/dhcpd.conf:ro"
