@@ -11,3 +11,9 @@ services:
     ports:
       - target: 80
         published: 8080
+  dhcp:
+    build: ./dhcp
+    container_name: dhcp
+    volumes:
+      - "./dhcp/data/dhcpd.conf:/data/dhcpd.conf:ro"
+    network_mode: host
